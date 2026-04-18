@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr" class="scroll-smooth">
 <head >
-
     <title>Ozan Karadağ | Yazılım Geliştirici & Web Uzmanı</title>
     <meta name="description" content="Ozan Karadağ - Profesyonel Web Tasarımı, Python Otomasyon ve C# Yazılım Çözümleri.">
 
     <meta name="google-site-verification" content="SANA_VERILEN_KOD_BURAYA" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ozan Karadağ | Yazılım Geliştirici & Web Uzmanı</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:title" content="Ozan Karadağ | Yazılım Geliştirici & Web Uzmanı">
+    <meta property="og:description" content="Profesyonel Web Tasarımı, Python Otomasyon ve C# Yazılım Çözümleri.">
+    <meta property="og:site_name" content="OZAN.DEV">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ozan Karadağ | Yazılım Geliştirici & Web Uzmanı">
+    <meta name="twitter:description" content="Profesyonel Web Tasarımı, Python Otomasyon ve C# Yazılım Çözümleri.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -56,7 +64,75 @@
             z-index: 60;
         }
         .tooltip:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        details[open] summary .chev { transform: rotate(180deg); }
+
+        /* CANLANDIRMA: İstatistik kartları */
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+            transition: transform 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+            border-color 350ms ease,
+            background 350ms ease,
+            box-shadow 350ms ease;
+        }
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.10), transparent 55%),
+            radial-gradient(circle at 70% 80%, rgba(34,211,238,0.12), transparent 60%);
+            opacity: 0;
+            transition: opacity 350ms ease;
+            pointer-events: none;
+        }
+        .stat-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.10) 35%, transparent 70%);
+            transform: translateX(-120%);
+            transition: transform 700ms ease;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+        }
+        .stat-card:hover::before { opacity: 1; }
+        .stat-card:hover::after { transform: translateX(120%); }
+
+        @keyframes floaty {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .floaty { animation: floaty 5.5s ease-in-out infinite; }
+        .floaty2 { animation: floaty 6.2s ease-in-out infinite; }
+        .floaty3 { animation: floaty 5.8s ease-in-out infinite; }
+        .floaty4 { animation: floaty 6.6s ease-in-out infinite; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .floaty, .floaty2, .floaty3, .floaty4 { animation: none !important; }
+            .stat-card, .stat-card * { transition: none !important; }
+        }
     </style>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ozan Karadağ",
+            "jobTitle": "Yazılım Geliştirici & Web Uzmanı",
+            "url": "https://ozan.dev",
+            "sameAs": [
+                "https://github.com/ozankaradag",
+                "https://github.com/ozanQ1",
+                "https://www.linkedin.com/in/ozan-karada%C4%9F-19a477403/"
+            ]
+        }
+    </script>
 </head>
 <body onmousemove="updateMouse(event)">
 
@@ -67,10 +143,10 @@
     <div class="max-w-6xl mx-auto px-6 flex justify-between items-center text-white italic-black">
         <div class="text-2xl text-cyan-500 tracking-tighter uppercase font-black">OZAN<span class="text-white">.DEV</span></div>
         <div class="space-x-4 hidden md:flex items-center">
-            <a href="https://github.com/ozankaradag" target="_blank" data-tip="ZİRVEYE GİDEN KODLAR" class="tooltip text-[10px] text-slate-300 hover:text-white transition border border-white/10 px-3 py-2 rounded-lg bg-white/5">
+            <a href="https://github.com/ozankaradag" target="_blank" rel="noopener noreferrer" aria-label="GitHub profilini aç" data-tip="ZİRVEYE GİDEN KODLAR" class="tooltip text-[10px] text-slate-300 hover:text-white transition border border-white/10 px-3 py-2 rounded-lg bg-white/5">
                 <i class="fa-brands fa-github text-base"></i>
             </a>
-            <a href="https://www.linkedin.com/in/ozan-karada%C4%9F-19a477403/" target="_blank" data-tip="PROFESYONEL OTORİTE" class="tooltip text-[10px] text-slate-300 hover:text-blue-400 transition border border-white/10 px-3 py-2 rounded-lg bg-white/5">
+            <a href="https://www.linkedin.com/in/ozan-karada%C4%9F-19a477403/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profilini aç" data-tip="PROFESYONEL OTORİTE" class="tooltip text-[10px] text-slate-300 hover:text-blue-400 transition border border-white/10 px-3 py-2 rounded-lg bg-white/5">
                 <i class="fa-brands fa-linkedin text-base"></i>
 
             </a>
@@ -80,10 +156,6 @@
 
         </div>
     </div>
-
-    </a>
-
-    </a>
 </nav>
 
 <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative text-white italic-black">
@@ -125,36 +197,36 @@
         </div>
 
         <div class="flex flex-wrap justify-center gap-4 mb-14 uppercase italic font-black">
-            <a href="https://github.com/ozanQ1" target="_blank" data-tip="KODUN KALBİ BURADA" class="tooltip px-6 py-4 glass rounded-2xl border-white/10 hover:border-white/40 hover:bg-white/5 transition-all flex items-center gap-3 group">
+            <a href="https://github.com/ozanQ1" target="_blank" rel="noopener noreferrer" aria-label="GitHub arşivini aç" data-tip="KODUN KALBİ BURADA" class="tooltip px-6 py-4 glass rounded-2xl border-white/10 hover:border-white/40 hover:bg-white/5 transition-all flex items-center gap-3 group">
                 <i class="fa-brands fa-github text-2xl group-hover:scale-110 transition"></i>
                 <div class="text-left font-sans normal-case"><p class="text-[9px] text-slate-400 font-black italic">Arşiv</p><p class="text-xs font-black tracking-widest uppercase italic">GITHUB</p></div>
             </a>
 
-            <a href="https://wa.me/905015305607" target="_blank" data-tip="ANLIK HAT" class="tooltip px-6 py-4 glass rounded-2xl border-white/10 border-green-500/10 hover:border-green-500/40 hover:bg-green-500/5 transition-all flex items-center gap-3 group">
+            <a href="https://wa.me/905015305607" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden yaz" data-tip="ANLIK HAT" class="tooltip px-6 py-4 glass rounded-2xl border-white/10 border-green-500/10 hover:border-green-500/40 hover:bg-green-500/5 transition-all flex items-center gap-3 group">
                 <i class="fa-brands fa-whatsapp text-2xl text-green-500 group-hover:scale-110 transition"></i>
                 <div class="text-left font-sans normal-case"><p class="text-[9px] text-slate-400 font-black italic">Hızlı Mesaj</p><p class="text-xs font-black tracking-widest uppercase italic">WHATSAPP</p></div>
             </a>
 
-            <a href="https://www.linkedin.com/in/ozan-karada%C4%9F-19a477403/" target="_blank" data-tip="PROFESYONEL İMZA" class="tooltip px-6 py-4 glass rounded-2xl border-white/10 hover:border-blue-500/40 hover:bg-white/5 transition-all flex items-center gap-3 group">
+            <a href="https://www.linkedin.com/in/ozan-karada%C4%9F-19a477403/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profilini aç" data-tip="PROFESYONEL İMZA" class="tooltip px-6 py-4 glass rounded-2xl border-white/10 hover:border-blue-500/40 hover:bg-white/5 transition-all flex items-center gap-3 group">
                 <i class="fa-brands fa-linkedin text-2xl text-blue-400 group-hover:scale-110 transition"></i>
                 <div class="text-left font-sans normal-case"><p class="text-[9px] text-slate-400 font-black italic">Bağlantı</p><p class="text-xs font-black tracking-widest uppercase italic">LINKEDIN</p></div>
             </a>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-16 px-4 uppercase font-black italic">
-            <div onclick="toggleModal('perfModal')" class="p-8 glass rounded-2xl border-white/5 shadow-2xl transition hover:border-cyan-500/30 cursor-pointer group">
+            <div onclick="toggleModal('perfModal')" class="stat-card floaty p-8 glass rounded-2xl border-white/5 shadow-2xl hover:border-cyan-500/30 cursor-pointer group">
                 <div class="text-cyan-500 text-4xl mb-2 font-black italic group-hover:scale-110 transition">%100</div>
                 <div class="text-xs text-slate-400 tracking-widest">PERFORMANS</div>
             </div>
-            <div onclick="toggleModal('contactModal')" class="p-8 glass rounded-2xl border-white/5 shadow-2xl transition hover:border-purple-500/30 cursor-pointer group">
+            <div onclick="toggleModal('supportModal')" class="stat-card floaty2 p-8 glass rounded-2xl border-white/5 shadow-2xl hover:border-purple-500/30 cursor-pointer group">
                 <div class="text-purple-500 text-4xl mb-2 font-black italic group-hover:scale-110 transition">7/24</div>
                 <div class="text-xs text-slate-400 tracking-widest uppercase">DESTEK</div>
             </div>
-            <div onclick="toggleModal('codeModal')" class="p-8 glass rounded-2xl border-white/5 shadow-2xl transition hover:border-emerald-500/30 cursor-pointer group">
+            <div onclick="toggleModal('codeModal')" class="stat-card floaty3 p-8 glass rounded-2xl border-white/5 shadow-2xl hover:border-emerald-500/30 cursor-pointer group">
                 <div class="text-emerald-500 text-4xl mb-2 font-black italic group-hover:scale-110 transition">SOLID</div>
                 <div class="text-xs text-slate-400 tracking-widest uppercase">MİMARİ</div>
             </div>
-            <div onclick="toggleModal('globalModal')" class="p-8 glass rounded-2xl border-white/5 shadow-2xl transition hover:border-orange-500/30 cursor-pointer group">
+            <div onclick="toggleModal('globalModal')" class="stat-card floaty4 p-8 glass rounded-2xl border-white/5 shadow-2xl hover:border-orange-500/30 cursor-pointer group">
                 <div class="text-orange-500 text-4xl mb-2 font-black italic group-hover:scale-110 transition">GLOBAL</div>
                 <div class="text-xs text-slate-400 tracking-widest uppercase">STANDART</div>
             </div>
@@ -215,34 +287,154 @@
     </div>
 </section>
 
-
-    <h2 class="text-5xl mb-20 text-center tracking-tighter uppercase italic font-black">OPERASYONEL <span class="text-cyan-500">MİMARİ</span></h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="group relative p-[1px] rounded-[3rem] bg-white/5 overflow-hidden">
-            <div class="relative glass rounded-[3rem] p-12 h-full flex flex-col justify-between">
-                <div><h3 class="text-3xl mb-6 italic uppercase">KURUMSAL FRAMEWORK</h3><p class="text-slate-400 mb-10 normal-case font-sans italic font-bold">Ultra hızlı, SEO odaklı profesyonel web çözümleri.</p></div>
-                <button onclick="toggleModal('processModal')" class="inline-block w-full text-center bg-white text-black py-5 rounded-2xl transition-all hover:bg-cyan-400 uppercase font-black italic">SİSTEM NASIL ÇALIŞIR? <i class="fa-solid fa-gears ml-2"></i></button>
+<section id="projeler" class="py-32 px-6 relative overflow-hidden italic-black text-white border-b border-white/5">
+    <div class="max-w-6xl mx-auto relative z-10">
+        <h2 class="text-5xl mb-20 text-center tracking-tighter uppercase italic font-black">OPERASYONEL <span class="text-cyan-500">MİMARİ</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+            <div class="group relative p-[1px] rounded-[3rem] bg-white/5 overflow-hidden">
+                <div class="relative glass rounded-[3rem] p-12 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl mb-6 italic uppercase">KURUMSAL FRAMEWORK</h3>
+                        <p class="text-slate-400 mb-10 normal-case font-sans italic font-bold">Ultra hızlı, SEO odaklı profesyonel web çözümleri.</p>
+                    </div>
+                    <button onclick="toggleModal('processModal')" class="inline-block w-full text-center bg-white text-black py-5 rounded-2xl transition-all hover:bg-cyan-400 uppercase font-black italic">SİSTEM NASIL ÇALIŞIR? <i class="fa-solid fa-gears ml-2"></i></button>
+                </div>
+            </div>
+            <div class="group relative p-[1px] rounded-[3rem] bg-white/5 overflow-hidden">
+                <div class="relative glass rounded-[3rem] p-12 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl mb-6 italic uppercase">KOD LABORATUVARI</h3>
+                        <p class="text-slate-400 mb-10 normal-case font-sans italic font-bold">Büyük ölçekli projelerin mimari iskeletlerini inceleyin.</p>
+                    </div>
+                    <button onclick="toggleModal('codeGalleryModal')" class="inline-block w-full text-center border border-white/20 py-5 rounded-2xl transition-all hover:bg-white hover:text-black uppercase font-black italic">PROJELERİ İNCELE <i class="fa-solid fa-code ml-2"></i></button>
+                </div>
             </div>
         </div>
-        <div class="group relative p-[1px] rounded-[3rem] bg-white/5 overflow-hidden">
-            <div class="relative glass rounded-[3rem] p-12 h-full flex flex-col justify-between">
-                <div><h3 class="text-3xl mb-6 italic uppercase">KOD LABORATUVARI</h3><p class="text-slate-400 mb-10 normal-case font-sans italic font-bold">Büyük ölçekli projelerin mimari iskeletlerini inceleyin.</p></div>
-                <button onclick="toggleModal('codeGalleryModal')" class="inline-block w-full text-center border border-white/20 py-5 rounded-2xl transition-all hover:bg-white hover:text-black uppercase font-black italic">PROJELERİ İNCELE <i class="fa-solid fa-code ml-2"></i></button>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-cyan-500/30 transition-all">
+                <div class="flex items-center justify-between mb-6">
+                    <p class="text-[10px] tracking-[0.35em] text-slate-500 uppercase font-black">Case Study</p>
+                    <span class="text-[10px] px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 uppercase font-black">Web</span>
+                </div>
+                <h3 class="text-2xl uppercase italic font-black mb-3">Kurumsal Landing + SEO</h3>
+                <p class="text-slate-400 normal-case font-sans italic font-bold mb-8">Hızlı açılan, dönüşüm odaklı sayfa mimarisi. Lighthouse ve teknik SEO düzeni.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">Tailwind</span>
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">OG / Schema</span>
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">Performans</span>
+                </div>
+            </div>
+            <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-purple-500/30 transition-all">
+                <div class="flex items-center justify-between mb-6">
+                    <p class="text-[10px] tracking-[0.35em] text-slate-500 uppercase font-black">Case Study</p>
+                    <span class="text-[10px] px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 uppercase font-black">Otomasyon</span>
+                </div>
+                <h3 class="text-2xl uppercase italic font-black mb-3">Python Bot / Raporlama</h3>
+                <p class="text-slate-400 normal-case font-sans italic font-bold mb-8">Süreçleri otomatikleştirip ölçülebilir raporlar üreten iş akışı.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">Python</span>
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">API</span>
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">Scheduler</span>
+                </div>
+            </div>
+            <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-emerald-500/30 transition-all">
+                <div class="flex items-center justify-between mb-6">
+                    <p class="text-[10px] tracking-[0.35em] text-slate-500 uppercase font-black">Case Study</p>
+                    <span class="text-[10px] px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 uppercase font-black">Yazılım</span>
+                </div>
+                <h3 class="text-2xl uppercase italic font-black mb-3">C# + SQL Çözümü</h3>
+                <p class="text-slate-400 normal-case font-sans italic font-bold mb-8">Modüler, sürdürülebilir mimari. İş kurallarına uygun veri tasarımı.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">.NET</span>
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">SQL Server</span>
+                    <span class="text-[10px] px-3 py-2 rounded-xl bg-white/5 border border-white/10 uppercase font-black">SOLID</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<section id="guven" class="py-32 px-6 relative overflow-hidden italic-black text-white bg-white/[0.01] border-b border-white/5">
+    <div class="max-w-6xl mx-auto relative z-10">
+        <h2 class="text-5xl mb-20 text-center tracking-tighter uppercase italic font-black">GÜVEN <span class="text-purple-500">SİSTEMİ</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-white/20 transition-all">
+                <p class="text-slate-300 normal-case font-sans italic font-bold leading-relaxed mb-8">“İletişim netti, teslimat hızlıydı. Sayfa hızı ciddi şekilde toparlandı.”</p>
+                <div class="flex items-center justify-between">
+                    <div class="text-left">
+                        <p class="uppercase font-black text-sm">Müşteri</p>
+                        <p class="text-[11px] text-slate-500 tracking-widest uppercase font-black">Kurumsal Web</p>
+                    </div>
+                    <div class="text-amber-300 text-sm" aria-label="5 üzerinden 5 yıldız">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-white/20 transition-all">
+                <p class="text-slate-300 normal-case font-sans italic font-bold leading-relaxed mb-8">“Otomasyonla günlük raporlar otomatikleşti. Hata oranı düştü, süreç hızlandı.”</p>
+                <div class="flex items-center justify-between">
+                    <div class="text-left">
+                        <p class="uppercase font-black text-sm">Müşteri</p>
+                        <p class="text-[11px] text-slate-500 tracking-widest uppercase font-black">Python Sistemleri</p>
+                    </div>
+                    <div class="text-amber-300 text-sm" aria-label="5 üzerinden 5 yıldız">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-white/20 transition-all">
+                <p class="text-slate-300 normal-case font-sans italic font-bold leading-relaxed mb-8">“SQL tarafı çok temiz tasarlandı. Proje büyürken bile yönetimi kolay kaldı.”</p>
+                <div class="flex items-center justify-between">
+                    <div class="text-left">
+                        <p class="uppercase font-black text-sm">Müşteri</p>
+                        <p class="text-[11px] text-slate-500 tracking-widest uppercase font-black">Özel Yazılım</p>
+                    </div>
+                    <div class="text-amber-300 text-sm" aria-label="5 üzerinden 5 yıldız">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl mb-8 uppercase italic font-black text-center">SSS / Hızlı Yanıt</h3>
+            <div class="space-y-4">
+                <details class="glass rounded-2xl border border-white/10 px-6 py-5">
+                    <summary class="cursor-pointer flex items-center justify-between uppercase font-black text-sm select-none">
+                        Teslim süresi ne kadar?
+                        <i class="fa-solid fa-chevron-down chev transition"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-400 normal-case font-sans italic font-bold">Projenin kapsamına göre değişir; çoğu kurumsal landing 3–7 gün bandında teslim edilir.</p>
+                </details>
+                <details class="glass rounded-2xl border border-white/10 px-6 py-5">
+                    <summary class="cursor-pointer flex items-center justify-between uppercase font-black text-sm select-none">
+                        SEO ve hız optimizasyonu dahil mi?
+                        <i class="fa-solid fa-chevron-down chev transition"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-400 normal-case font-sans italic font-bold">Evet; teknik SEO, temel yapılandırmalar ve performans iyileştirmeleri süreçte ele alınır.</p>
+                </details>
+                <details class="glass rounded-2xl border border-white/10 px-6 py-5">
+                    <summary class="cursor-pointer flex items-center justify-between uppercase font-black text-sm select-none">
+                        Bakım/destek nasıl ilerliyor?
+                        <i class="fa-solid fa-chevron-down chev transition"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-400 normal-case font-sans italic font-bold">İhtiyaca göre; küçük güncellemeler ve içerik değişimleri için aylık destek modeli uygulanabilir.</p>
+                </details>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer class="py-24 px-6 relative overflow-hidden border-t border-white/5 text-white italic-black">
     <div class="max-w-6xl mx-auto text-center relative z-10">
         <div class="mb-16 uppercase font-black">
             <p class="text-cyan-500 text-xs tracking-[0.4em] mb-8 font-black">RESMİ DİJİTAL TERMİNAL</p>
-      
-    </p>
-  </div>
-  ...
-</section>
+            <p class="text-slate-400 normal-case font-sans italic font-bold max-w-2xl mx-auto leading-relaxed">Hız, mimari ve sürdürülebilirlik odaklı web & yazılım çözümleri. Projenizi netleştirelim, doğru sistemi kuralım.</p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <button onclick="toggleModal('contactModal')" class="px-8 py-4 rounded-2xl bg-cyan-600 hover:bg-cyan-500 transition-all shadow-lg shadow-cyan-500/20 uppercase font-black italic">Teklif Al</button>
+                <a href="#projeler" class="px-8 py-4 rounded-2xl glass border border-white/10 hover:border-white/25 transition-all uppercase font-black italic">Projeleri Gör</a>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 uppercase font-black">
@@ -260,27 +452,103 @@
             </div>
         </div>
 
+        <div class="max-w-5xl mx-auto mb-16">
+            <div class="glass rounded-[2rem] border border-white/10 p-7 md:p-10 text-left">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <div>
+                        <p class="text-[10px] tracking-[0.4em] text-slate-500 uppercase font-black mb-2">Hızlı İletişim</p>
+                        <h3 class="text-2xl uppercase italic font-black">E‑posta Bırak</h3>
+                        <p class="text-slate-500 normal-case font-sans italic font-bold mt-2">Kısa bir not yaz, tek tıkla e‑posta uygulaman açılıp mesajın hazır gelsin.</p>
+                    </div>
+                    <button onclick="toggleModal('contactModal')" class="shrink-0 px-8 py-4 rounded-2xl bg-purple-600 hover:bg-purple-500 transition-all shadow-lg shadow-purple-500/20 uppercase font-black italic">Detaylı Form</button>
+                </div>
+
+                <form id="footerLeadForm" class="mt-8 grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+                    <input id="footerLeadName" class="md:col-span-3 w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-[18px] text-[13px] text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" placeholder="Ad Soyad" autocomplete="name" required>
+                    <input id="footerLeadMail" type="email" class="md:col-span-4 w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-[18px] text-[13px] text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" placeholder="E‑posta" autocomplete="email" required>
+                    <input id="footerLeadMsg" class="md:col-span-4 w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-[18px] text-[13px] text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" placeholder="Mesaj (kısa)" required>
+                    <button type="submit" class="md:col-span-2 w-full min-w-[140px] px-8 py-[18px] rounded-2xl bg-cyan-600 hover:bg-cyan-500 transition-all uppercase font-black italic text-[13px] tracking-wider">Gönder</button>
+                </form>
+                <p class="mt-3 text-[11px] text-slate-600 font-sans normal-case italic font-bold">Not: Bu form güvenli şekilde e‑posta uygulamanı açar (sunucuya kaydetmez).</p>
+            </div>
+        </div>
+
         <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5 pt-12 uppercase font-black text-slate-600 text-[10px]">
             <p>KONUM: TÜRKİYE / ZAMAN: 7/24</p>
             <div class="flex gap-6">
-                <a href="https://wa.me/905015305607" target="_blank" class="hover:text-green-500 transition-all text-xs"><i class="fa-brands fa-whatsapp text-sm mr-1"></i> WHATSAPP</a>
-                <a href="https://github.com/ozanQ1" target="_blank" class="hover:text-white transition-all text-xs"><i class="fa-brands fa-github text-sm mr-1"></i> GITHUB</a>
-                <a href="https://www.linkedin.com/in/ozan-karada%C4%9F-19a477403/" target="_blank" class="hover:text-blue-400 transition-all text-xs"><i class="fa-brands fa-linkedin text-sm mr-1"></i> LINKEDIN</a>
+                <a href="https://wa.me/905015305607" target="_blank" rel="noopener noreferrer" class="hover:text-green-500 transition-all text-xs"><i class="fa-brands fa-whatsapp text-sm mr-1"></i> WHATSAPP</a>
+                <a href="https://github.com/ozanQ1" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-all text-xs"><i class="fa-brands fa-github text-sm mr-1"></i> GITHUB</a>
+                <a href="https://www.linkedin.com/in/ozan-karada%C4%9F-19a477403/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-all text-xs"><i class="fa-brands fa-linkedin text-sm mr-1"></i> LINKEDIN</a>
             </div>
             <p class="tracking-[0.5em]">© 2026 OZAN KARADAG</p>
         </div>
         <div class="absolute bottom-4 right-4 text-6xl font-black opacity-[0.02] pointer-events-none uppercase italic">OZAN</div>
     </div>
-    
+
 
 
 </footer>
 
 <div id="perfModal" class="modal px-6 italic-black text-white">
-    <div class="max-w-xl w-full glass rounded-[3rem] p-12 relative border-cyan-500/30">
-        <button onclick="toggleModal('perfModal')" class="absolute top-8 right-8 text-2xl hover:text-cyan-400">&times;</button>
-        <h3 class="text-3xl font-black mb-6 italic text-cyan-400 uppercase">MAX PERFORMANS</h3>
-        <p class="text-slate-300 normal-case font-sans italic text-lg leading-relaxed">Yazdığım kodlar, bellek kullanımını minimize eden algoritma optimizasyonları ile çalışır.</p>
+    <div class="max-w-2xl w-full glass rounded-[3rem] p-12 relative border-cyan-500/30">
+        <button onclick="toggleModal('perfModal')" class="absolute top-8 right-8 text-2xl hover:text-cyan-400" aria-label="Kapat">&times;</button>
+        <div class="flex items-start gap-6">
+            <div class="shrink-0 w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                <i class="fa-solid fa-bolt text-cyan-400 text-2xl"></i>
+            </div>
+            <div class="min-w-0">
+                <h3 class="text-3xl font-black mb-3 italic text-cyan-400 uppercase">MAX PERFORMANS</h3>
+                <p class="text-slate-300 normal-case font-sans italic text-lg leading-relaxed">Sayfanın hızını “gösteriş” değil, <span class="text-white font-black">mühendislik</span> olarak ele alıyorum: daha az yük, daha hızlı açılış, daha yüksek dönüşüm.</p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 uppercase font-black">
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <p class="text-[10px] text-slate-500 tracking-[0.35em]">HEDEF</p>
+                        <p class="mt-2 text-sm text-white tracking-widest">LCP / CLS</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <p class="text-[10px] text-slate-500 tracking-[0.35em]">YÖNTEM</p>
+                        <p class="mt-2 text-sm text-white tracking-widest">OPTİMİZE YÜK</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <p class="text-[10px] text-slate-500 tracking-[0.35em]">SONUÇ</p>
+                        <p class="mt-2 text-sm text-white tracking-widest">HIZ + SEO</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-slate-500 normal-case font-sans italic font-bold leading-relaxed">Kısaca: hızlı site, daha iyi kullanıcı deneyimi; daha iyi deneyim, daha fazla güven.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="supportModal" class="modal px-6 italic-black text-white">
+    <div class="max-w-2xl w-full glass rounded-[3rem] p-12 relative border-purple-500/30">
+        <button onclick="toggleModal('supportModal')" class="absolute top-8 right-8 text-2xl hover:text-purple-400" aria-label="Kapat">&times;</button>
+        <div class="flex items-start gap-6">
+            <div class="shrink-0 w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                <i class="fa-solid fa-headset text-purple-300 text-2xl"></i>
+            </div>
+            <div class="min-w-0">
+                <h3 class="text-3xl font-black mb-3 italic text-purple-300 uppercase">7/24 DESTEK</h3>
+                <p class="text-slate-300 normal-case font-sans italic text-lg leading-relaxed">Sadece “yapıp bırakmam”. Yayın sonrası süreçte <span class="text-white font-black">hızlı geri dönüş</span>, net iletişim ve kontrollü güncelleme akışıyla ilerleriz.</p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 uppercase font-black">
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <p class="text-[10px] text-slate-500 tracking-[0.35em]">KANAL</p>
+                        <p class="mt-2 text-sm text-white tracking-widest">WHATSAPP</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <p class="text-[10px] text-slate-500 tracking-[0.35em]">SÜREÇ</p>
+                        <p class="mt-2 text-sm text-white tracking-widest">TAKİP + RAPOR</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <p class="text-[10px] text-slate-500 tracking-[0.35em]">YAKLAŞIM</p>
+                        <p class="mt-2 text-sm text-white tracking-widest">NET ÇÖZÜM</p>
+                    </div>
+                </div>
+                <div class="mt-6 flex flex-col md:flex-row gap-3">
+                    <button onclick="toggleModal('supportModal'); toggleModal('contactModal')" class="px-6 py-4 rounded-2xl bg-purple-600 hover:bg-purple-500 transition-all shadow-lg shadow-purple-500/20 uppercase font-black italic">Teklif Formu</button>
+                    <a href="https://wa.me/905015305607" target="_blank" rel="noopener noreferrer" class="px-6 py-4 rounded-2xl bg-cyan-600 hover:bg-cyan-500 transition-all uppercase font-black italic text-center">WhatsApp</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -289,26 +557,82 @@
         <button onclick="toggleModal('contactModal')" class="absolute top-8 right-8 text-2xl hover:text-purple-400">&times;</button>
         <h3 class="text-3xl font-black mb-8 italic text-purple-400 uppercase">PROJE BAŞLAT</h3>
         <div class="space-y-6 text-left normal-case font-sans italic font-bold">
-            <div class="p-6 bg-white/5 rounded-2xl border border-white/10"><p class="text-sm text-slate-400">E-posta:</p><p class="text-lg">benozan65@gmail.com</p></div>
-            <div class="p-6 bg-white/5 rounded-2xl border border-white/10"><p class="text-sm text-slate-400">İletişim:</p><p class="text-lg">+90 501 530 56 07</p></div>
-            <a href="https://wa.me/905015305607" target="_blank" class="block w-full text-center bg-cyan-600 py-5 rounded-2xl font-black uppercase text-sm hover:bg-cyan-500 transition italic">WHATSAPP İLE BAĞLAN</a>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                <p class="text-sm text-slate-400">E-posta:</p>
+                <p class="text-lg select-all">benozan65@gmail.com</p>
+            </div>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                <p class="text-sm text-slate-400">İletişim:</p>
+                <p class="text-lg select-all">+90 501 530 56 07</p>
+            </div>
+
+            <form id="leadForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input id="leadName" class="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-purple-500/50" placeholder="Ad Soyad" autocomplete="name" required>
+                    <input id="leadMail" type="email" class="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-purple-500/50" placeholder="E-posta" autocomplete="email" required>
+                </div>
+                <textarea id="leadMsg" rows="4" class="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-purple-500/50" placeholder="Kısaca proje ihtiyacınız..." required></textarea>
+                <button type="submit" class="w-full py-5 rounded-2xl bg-purple-600 hover:bg-purple-500 transition-all shadow-lg shadow-purple-500/20 uppercase font-black italic">MESAJI HAZIRLA</button>
+                <p id="leadHint" class="text-[11px] text-slate-500 font-sans normal-case italic font-bold leading-relaxed">Gönder butonu e-posta uygulamanı açar ve mesajı otomatik hazırlar. İstersen WhatsApp’tan da yazabilirsin.</p>
+            </form>
+
+            <a href="https://wa.me/905015305607" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-cyan-600 py-5 rounded-2xl font-black uppercase text-sm hover:bg-cyan-500 transition italic">WHATSAPP İLE BAĞLAN</a>
         </div>
     </div>
 </div>
 
 <div id="codeModal" class="modal px-6 italic-black text-white">
-    <div class="max-w-xl w-full glass rounded-[3rem] p-12 relative border-emerald-500/20">
-        <button onclick="toggleModal('codeModal')" class="absolute top-8 right-8 text-2xl hover:text-emerald-400">&times;</button>
-        <h3 class="text-3xl font-black mb-6 text-emerald-500 uppercase">MÜHENDİSLİK VİZYONU</h3>
-        <p class="text-slate-400 normal-case font-sans italic text-lg leading-relaxed">SOLID prensipleriyle, yarın başka bir mühendisin bile kolayca büyütebileceği kod mirası bırakıyorum.</p>
+    <div class="max-w-2xl w-full glass rounded-[3rem] p-12 relative border-emerald-500/20">
+        <button onclick="toggleModal('codeModal')" class="absolute top-8 right-8 text-2xl hover:text-emerald-400" aria-label="Kapat">&times;</button>
+        <div class="flex items-start gap-6">
+            <div class="shrink-0 w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                <i class="fa-solid fa-cubes text-emerald-400 text-2xl"></i>
+            </div>
+            <div class="min-w-0">
+                <h3 class="text-3xl font-black mb-3 text-emerald-400 uppercase">SOLID MİMARİ</h3>
+                <p class="text-slate-300 normal-case font-sans italic text-lg leading-relaxed">Kod; hızla büyürken kırılmamalı. Bu yüzden <span class="text-white font-black">okunabilir</span>, <span class="text-white font-black">test edilebilir</span> ve devredilebilir bir mimari kuruyorum.</p>
+                <div class="mt-8 space-y-3 text-left normal-case font-sans italic font-bold">
+                    <div class="flex items-start gap-3 p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                        <p><span class="text-white font-black">Modüler yapı</span> ile yeni özellik eklemek daha hızlı.</p>
+                    </div>
+                    <div class="flex items-start gap-3 p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                        <p><span class="text-white font-black">Net sorumluluk</span> sayesinde hata ayıklamak daha kolay.</p>
+                    </div>
+                    <div class="flex items-start gap-3 p-5 rounded-2xl bg-white/5 border border-white/10">
+                        <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                        <p><span class="text-white font-black">Genişlemeye hazır</span> mimari ile maliyet kontrol altında kalır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <div id="globalModal" class="modal px-6 italic-black text-white">
-    <div class="max-w-xl w-full glass rounded-[3rem] p-12 relative border-orange-500/20">
-        <button onclick="toggleModal('globalModal')" class="absolute top-8 right-8 text-2xl hover:text-orange-500">&times;</button>
-        <h3 class="text-3xl font-black mb-6 text-orange-500 uppercase">GLOBAL STANDART</h3>
-        <p class="text-slate-400 normal-case font-sans italic text-lg leading-relaxed">GitHub Pro standartlarına tam uyumlu, küresel ölçekte kabul görmüş güvenlik protokollerini uyguluyorum.</p>
+    <div class="max-w-2xl w-full glass rounded-[3rem] p-12 relative border-orange-500/20">
+        <button onclick="toggleModal('globalModal')" class="absolute top-8 right-8 text-2xl hover:text-orange-400" aria-label="Kapat">&times;</button>
+        <div class="flex items-start gap-6">
+            <div class="shrink-0 w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+                <i class="fa-solid fa-globe text-orange-300 text-2xl"></i>
+            </div>
+            <div class="min-w-0">
+                <h3 class="text-3xl font-black mb-3 text-orange-300 uppercase">GLOBAL STANDART</h3>
+                <p class="text-slate-300 normal-case font-sans italic text-lg leading-relaxed">Projen; sürdürülebilir olmalı. Bu yüzden uluslararası pratiklere yakın bir düzen kurarım: versiyon kontrol, güvenli linkleme, temiz yapı ve yayın disiplini.</p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 text-left normal-case font-sans italic font-bold">
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                        <p class="uppercase font-black tracking-widest text-[11px] text-slate-500 mb-2">GÜVEN</p>
+                        <p class="text-slate-300">Güvenli linkleme, tutarlı meta’lar, temiz yapı.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                        <p class="uppercase font-black tracking-widest text-[11px] text-slate-500 mb-2">SÜRDÜRÜLEBİLİRLİK</p>
+                        <p class="text-slate-300">Güncellemesi kolay, taşınabilir ve büyüyebilir sistem.</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-slate-500 normal-case font-sans italic font-bold">Amaç: “bugün güzel görünen” değil, “yarın da sağlam kalan” proje.</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -327,21 +651,55 @@
 
 <div id="processModal" class="modal px-6 italic-black text-white">
     <div class="max-w-2xl w-full glass rounded-[3rem] p-12 relative border-cyan-500/30">
-        <button onclick="toggleModal('processModal')" class="absolute top-8 right-8 text-2xl hover:text-cyan-400">&times;</button>
+        <button onclick="toggleModal('processModal')" class="absolute top-8 right-8 text-2xl hover:text-cyan-400" aria-label="Kapat">&times;</button>
         <h3 class="text-3xl font-black mb-8 italic text-cyan-400 uppercase">SÜREÇ ANALİZİ</h3>
         <div class="space-y-8 text-left normal-case font-sans italic font-bold">
-            <div class="flex gap-6 items-start"><div class="text-cyan-500 text-xl font-black italic">01</div><div><p class="uppercase">ANALİZ VE PLANLAMA</p><p class="text-sm text-slate-400 font-normal">Veri mimarisi tasarlanır.</p></div></div>
-            <div class="flex gap-6 items-start"><div class="text-cyan-500 text-xl font-black italic">02</div><div><p class="uppercase">MİMARİ İNŞA</p><p class="text-sm text-slate-400 font-normal">SOLID kodlama yapılır.</p></div></div>
-            <div class="flex gap-6 items-start"><div class="text-cyan-500 text-xl font-black italic">03</div><div><p class="uppercase">TEST VE DEPLOY</p><p class="text-sm text-slate-400 font-normal">Hatasız teslimat sağlanır.</p></div></div>
+            <div class="flex gap-6 items-start">
+                <div class="text-cyan-500 text-xl font-black italic">01</div>
+                <div>
+                    <p class="uppercase">ANALİZ & HEDEF</p>
+                    <p class="text-sm text-slate-400 font-normal">İhtiyaçları netleştirir, doğru sayfa akışını ve içerik planını çıkarırız.</p>
+                </div>
+            </div>
+            <div class="flex gap-6 items-start">
+                <div class="text-cyan-500 text-xl font-black italic">02</div>
+                <div>
+                    <p class="uppercase">TASARIM & İNŞA</p>
+                    <p class="text-sm text-slate-400 font-normal">Modern UI + performans + SEO dengesiyle sistemi kurarım.</p>
+                </div>
+            </div>
+            <div class="flex gap-6 items-start">
+                <div class="text-cyan-500 text-xl font-black italic">03</div>
+                <div>
+                    <p class="uppercase">TEST & YAYIN</p>
+                    <p class="text-sm text-slate-400 font-normal">Mobil/desktop kontrol, hız ölçümü ve temiz yayın süreci.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div id="ghInfo" class="modal px-6 italic-black text-white"><div class="max-w-2xl w-full glass rounded-[3rem] p-12 text-center relative border-cyan-500/30"><button onclick="toggleModal('ghInfo')" class="absolute top-8 right-8 text-2xl hover:text-cyan-400">&times;</button><i class="fa-brands fa-github text-7xl mb-6"></i><h3 class="text-4xl font-black mb-6 italic text-cyan-400 uppercase">TEKNİK DİSİPLİN</h3><p class="text-slate-300 normal-case font-sans italic text-lg font-normal">GitHub Pro standartlarında, küresel güvenlik ve sürdürülebilirlik protokolleri.</p></div></div>
+<div id="ghInfo" class="modal px-6 italic-black text-white">
+    <div class="max-w-2xl w-full glass rounded-[3rem] p-12 text-center relative border-cyan-500/30">
+        <button onclick="toggleModal('ghInfo')" class="absolute top-8 right-8 text-2xl hover:text-cyan-400" aria-label="Kapat">&times;</button>
+        <i class="fa-brands fa-github text-7xl mb-6"></i>
+        <h3 class="text-4xl font-black mb-6 italic text-cyan-400 uppercase">TEKNİK DİSİPLİN</h3>
+        <p class="text-slate-300 normal-case font-sans italic text-lg font-normal">Sürüm kontrol, düzenli yapı ve sürdürülebilirlik odaklı yaklaşım. Amaç: tek seferlik değil, büyüyen projeler.</p>
+    </div>
+</div>
 
 <script>
-    function toggleModal(id) { document.getElementById(id).classList.toggle('active'); }
-    window.onclick = function(event) { if (event.target.classList.contains('modal')) { event.target.classList.remove('active'); } }
+    function toggleModal(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('active');
+    }
+
+    window.onclick = function(event) {
+        if (event.target.classList && event.target.classList.contains('modal')) {
+            event.target.classList.remove('active');
+        }
+    }
+
     function updateMouse(e) {
         const x = (e.clientX / window.innerWidth) * 100;
         const y = (e.clientY / window.innerHeight) * 100;
@@ -356,11 +714,40 @@
     };
 
     function switchProject(p) {
-        document.getElementById('code-content').innerHTML = `<code>${projects[p]}</code>`;
+        const code = document.getElementById('code-content');
+        if (!code) return;
+        code.innerHTML = `<code>${projects[p] || ''}</code>`;
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById('btn-' + p).classList.add('active');
+        const btn = document.getElementById('btn-' + p);
+        if (btn) btn.classList.add('active');
     }
     switchProject('otomasyon');
+
+    const leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+        leadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = (document.getElementById('leadName')?.value || '').trim();
+            const mail = (document.getElementById('leadMail')?.value || '').trim();
+            const msg = (document.getElementById('leadMsg')?.value || '').trim();
+            const subject = encodeURIComponent(`Proje Teklifi | ${name || 'İletişim'}`);
+            const body = encodeURIComponent(`Ad Soyad: ${name}\nE-posta: ${mail}\n\nMesaj:\n${msg}\n\n—\nGönderim: ozan.dev iletişim formu`);
+            window.location.href = `mailto:benozan65@gmail.com?subject=${subject}&body=${body}`;
+        });
+    }
+
+    const footerLeadForm = document.getElementById('footerLeadForm');
+    if (footerLeadForm) {
+        footerLeadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = (document.getElementById('footerLeadName')?.value || '').trim();
+            const mail = (document.getElementById('footerLeadMail')?.value || '').trim();
+            const msg = (document.getElementById('footerLeadMsg')?.value || '').trim();
+            const subject = encodeURIComponent(`İletişim | ${name || 'Ziyaretçi'}`);
+            const body = encodeURIComponent(`Ad Soyad: ${name}\nE-posta: ${mail}\n\nMesaj:\n${msg}\n\n—\nGönderim: ozan.dev footer mini form`);
+            window.location.href = `mailto:benozan65@gmail.com?subject=${subject}&body=${body}`;
+        });
+    }
 </script>
 </body>
 </html>
