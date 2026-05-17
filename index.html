@@ -19,6 +19,7 @@
     <meta name="twitter:description" content="Profesyonel Web Tasarımı, Python Otomasyon ve C# Yazılım Çözümleri.">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Code:wght@400;500&display=swap');
@@ -764,75 +765,10 @@
         <div class="max-w-6xl mx-auto relative z-10">
             <h2 class="text-5xl mb-20 text-center tracking-tighter uppercase italic font-black">HİZMET <span
                     class="text-purple-500">KAPASİTESİ</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div id="servicesContainer" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div
-                    class="glass p-10 rounded-[3rem] border-white/5 hover:border-cyan-500/30 transition-all group flex flex-col justify-between">
-                    <div>
-                        <i class="fa-solid fa-robot text-4xl mb-6 text-cyan-500"></i>
-                        <h3 class="text-2xl mb-2 italic uppercase">PYTHON SİSTEMLERİ</h3>
-                        <p class="text-slate-500 mb-8 font-sans normal-case italic">Veri madenciliği ve bot çözümleri.
-                        </p>
-                        <ul class="space-y-4 mb-10 text-sm font-sans italic font-bold">
-                            <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Veri Analizi</li>
-                            <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Selenium Otomasyon</li>
-                            <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> API Entegrasyonu</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="text-3xl font-black italic mb-2 bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
-                        ₺30.000<span class="text-xs text-slate-500 ml-2 uppercase">'den başlayan</span></div>
-                    <p class="text-[11px] text-slate-500 font-sans normal-case italic font-bold mb-6">Teslim: 2–5 gün •
-                        Kapsam: Otomasyon/Script • Net teklif: mesajla</p>
-                    <button onclick="toggleModal('contactModal')"
-                        class="w-full py-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-cyan-600 hover:border-cyan-600 transition-all uppercase font-black italic">TEKLİF
-                        AL</button>
-                </div>
-
-                <div
-                    class="glass p-10 rounded-[3rem] border-purple-500/30 bg-purple-500/[0.02] relative transform md:-translate-y-4 flex flex-col justify-between">
-                    <div
-                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-600 px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase italic">
-                        EN POPÜLER</div>
-                    <div>
-                        <i class="fa-solid fa-layer-group text-4xl mb-6 text-purple-500"></i>
-                        <h3 class="text-2xl mb-2 italic uppercase">KURUMSAL WEB</h3>
-                        <p class="text-slate-500 mb-8 font-sans normal-case italic">SEO uyumlu, modern mimari yapılar.
-                        </p>
-                        <ul class="space-y-4 mb-10 text-sm font-sans italic font-bold">
-                            <li><i class="fa-solid fa-check text-purple-500 mr-2"></i> TailWind CSS Tasarım</li>
-                            <li><i class="fa-solid fa-check text-purple-500 mr-2"></i> %100 SEO Skoru</li>
-                            <li><i class="fa-solid fa-check text-purple-500 mr-2"></i> Admin Paneli</li>
-                        </ul>
-                    </div>
-                    <div class="text-3xl font-black italic mb-2 text-purple-400">₺50.000<span
-                            class="text-xs text-slate-500 ml-2 uppercase">'den başlayan</span></div>
-                    <p class="text-[11px] text-slate-500 font-sans normal-case italic font-bold mb-6">Teslim: 3–7 gün •
-                        Kapsam: Landing + SEO • Net teklif: mesajla</p>
-                    <button onclick="toggleModal('contactModal')"
-                        class="w-full py-4 rounded-2xl bg-purple-600 hover:bg-purple-500 transition-all shadow-lg shadow-purple-500/20 uppercase font-black italic">BAŞLAYALIM</button>
-                </div>
-
-                <div
-                    class="glass p-10 rounded-[3rem] border-white/5 hover:border-emerald-500/30 transition-all group flex flex-col justify-between">
-                    <div>
-                        <i class="fa-solid fa-laptop-code text-4xl mb-6 text-emerald-500"></i>
-                        <h3 class="text-2xl mb-2 italic uppercase">ÖZEL YAZILIM</h3>
-                        <p class="text-slate-500 mb-8 font-sans normal-case italic">C# ve SQL tabanlı ticari çözümler.
-                        </p>
-                        <ul class="space-y-4 mb-10 text-sm font-sans italic font-bold">
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> SQL Veritabanı</li>
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Desktop Uygulamalar</li>
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> SOLID Mimari</li>
-                        </ul>
-                    </div>
-                    <div class="text-3xl font-black italic mb-2 font-black">₺100.000<span
-                            class="text-xs text-slate-500 ml-2 uppercase">'den başlayan</span></div>
-                    <p class="text-[11px] text-slate-500 font-sans normal-case italic font-bold mb-6">Teslim: 7–14 gün •
-                        Kapsam: Modüler sistem • Net teklif: analiz sonrası</p>
-                    <button onclick="toggleModal('contactModal')"
-                        class="w-full py-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-emerald-600 hover:border-emerald-600 transition-all uppercase font-black italic">DETAYLARI
-                        SOR</button>
-                </div>
+                    class="col-span-1 md:col-span-3 text-center py-10 uppercase font-black text-slate-500 tracking-widest text-sm">
+                    Yükleniyor...</div>
             </div>
         </div>
     </section>
@@ -1521,26 +1457,6 @@
                     const text = `🚀 *YENİ PROJE TALEBİ*\n\n👤 *Kişi:* ${name}\n📧 *E-posta:* ${mail}\n📁 *Tür:* ${type}\n💰 *Ölçek:* ${budget}\n\n📝 *Detaylar:*\n${msg}`;
                     window.open(`https://t.me/ozankaradag?text=${encodeURIComponent(text)}`, '_blank');
                 }
-
-                document.getElementById('detailedLeadForm').addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    const name = document.getElementById('detName').value.trim();
-                    const mail = document.getElementById('detMail').value.trim();
-                    const type = document.getElementById('detType').value;
-                    const budget = document.getElementById('detBudget').value;
-                    const msg = document.getElementById('detMsg').value.trim();
-
-                    const subjectText = `Detaylı Proje Talebi | ${name}`;
-                    const bodyText = `Ad Soyad: ${name}\nE-posta: ${mail}\nProje Türü: ${type}\nÖlçek/Bütçe: ${budget}\n\nDetaylar:\n${msg}\n\n—\nGönderim: ozan.dev Detaylı Form`;
-
-                    if (typeof sendToEndpointOrMailto === 'function') {
-                        sendToEndpointOrMailto({ subjectText, bodyText, fallbackTo: "benozan65@gmail.com" });
-                        toggleModal('contactModal');
-                        this.reset();
-                    } else {
-                        window.location.href = `mailto:benozan65@gmail.com?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
-                    }
-                });
             </script>
         </div>
     </div>
@@ -1789,7 +1705,10 @@
 
 
     <script>
-        // Tema Yönetimi
+        const SUPABASE_URL = "https://ytxeocbclqesurqknaze.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl0eGVvY2JjbHFlc3VycWtuYXplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwMjUyODYsImV4cCI6MjA5NDYwMTI4Nn0.TqSwTbUWpXCFmjJJrJZ_zarhWkZT6k6gCyxlxEsnW68";
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
         const currentTheme = localStorage.getItem('theme') || 'dark';
@@ -1811,32 +1730,12 @@
             });
         }
 
-        // Proje Filtreleme
-        function filterProjects(category) {
-            const cards = document.querySelectorAll('.project-card');
-            const btns = document.querySelectorAll('.filter-btn');
 
-            btns.forEach(btn => {
-                btn.classList.remove('active', 'bg-cyan-500/10', 'text-white');
-                if (btn.textContent.toLowerCase() === category.toLowerCase() || (category === 'all' && btn.textContent.toLowerCase() === 'hepsi')) {
-                    btn.classList.add('active', 'bg-cyan-500/10', 'text-white');
-                }
-            });
-
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'block';
-                    setTimeout(() => card.style.opacity = '1', 10);
-                } else {
-                    card.style.opacity = '0';
-                    setTimeout(() => card.style.display = 'none', 300);
-                }
-            });
-        }
 
         function toggleModal(id) {
             const el = document.getElementById(id);
-            if (el) el.classList.toggle('active');
+            if (!el) return;
+            el.classList.toggle('active');
         }
 
         const techCopy = {
@@ -1937,7 +1836,6 @@
             document.body.style.setProperty('--y', y + '%');
         }
 
-        // Mobile nav toggle
         const mobileNavBtn = document.getElementById('mobileNavBtn');
         const mobileNav = document.getElementById('mobileNav');
         if (mobileNavBtn && mobileNav) {
@@ -1949,7 +1847,6 @@
             });
         }
 
-        // Scrollspy (aktif bölüm vurgusu)
         (function initScrollSpy() {
             const links = Array.from(document.querySelectorAll('a[data-scrollspy]'));
             if (!links.length) return;
@@ -1983,317 +1880,289 @@
 
             sections.forEach(s => obs.observe(s));
 
-            // initial
             setActive('#' + sections[0].id);
         })();
 
-        const projects = {
-            otomasyon: {
-                code: `<span class="text-slate-500"># Ozan Karadağ | Otomasyon Workflow</span>
-<span class="text-purple-400">import</span> time
-<span class="text-purple-400">from</span> core <span class="text-purple-400">import</span> AutomationSystem
 
-<span class="text-purple-400">def</span> <span class="text-blue-400">optimize_workflow</span>():
-    system = AutomationSystem()
-    print(<span class="text-emerald-400">"Sistem taranıyor..."</span>)
-    
-    <span class="text-slate-500"># Manuel süreçleri otomatikleştir</span>
-    system.auto_report(interval=<span class="text-emerald-400">"7/24"</span>)
-    system.sync_database()
-    
-    <span class="text-purple-400">return</span> <span class="text-emerald-400">"Verimlilik %40 Artırıldı"</span>`,
-                tech: "Python, Selenium, Pandas",
-                result: "Günlük 4 saatlik manuel veri girişi 5 dakikaya indirildi."
-            },
-            ai: {
-                code: `<span class="text-slate-500"># AI Analiz Modülü</span>
-<span class="text-purple-400">import</span> numpy <span class="text-purple-400">as</span> np
-<span class="text-purple-400">from</span> sklearn <span class="text-purple-400">import</span> predictive_model
 
-<span class="text-purple-400">def</span> <span class="text-blue-400">predict_conversion</span>(data):
-    model = predictive_model.load(<span class="text-emerald-400">"model.pkl"</span>)
-    score = model.predict_proba(data)
-    
-    <span class="text-slate-500"># %85 üzeri dönüşüm ihtimalini yakala</span>
-    <span class="text-purple-400">if</span> score > <span class="text-cyan-400">0.85</span>:
-        <span class="text-purple-400">return</span> <span class="text-emerald-400">"Yüksek Dönüşüm Potansiyeli"</span>
-    <span class="text-purple-400">return</span> <span class="text-emerald-400">"Standart Akış"</span>`,
-                tech: "Python, Scikit-Learn, NumPy",
-                result: "Kullanıcı davranışları analiz edilerek satış ihtimali yüksek kitleler %25 daha isabetli hedeflendi."
-            },
-            database: {
-                code: `<span class="text-slate-500">-- SQL Veri Mimarisi --</span>
-<span class="text-purple-400">CREATE PROCEDURE</span> <span class="text-blue-400">OptimizeDatabase</span>
-<span class="text-purple-400">AS</span>
-<span class="text-purple-400">BEGIN</span>
-    <span class="text-slate-500">-- Gereksiz logları temizle ve indeksleri yenile</span>
-    <span class="text-purple-400">DELETE FROM</span> Logs <span class="text-purple-400">WHERE</span> CreatedAt < <span class="text-purple-400">DATEADD</span>(day, -30, <span class="text-purple-400">GETDATE</span>());
-    
-    <span class="text-purple-400">ALTER INDEX</span> ALL <span class="text-purple-400">ON</span> Users <span class="text-purple-400">REBUILD</span>;
-    
-    <span class="text-purple-400">SELECT</span> <span class="text-emerald-400">'Veritabanı optimize edildi'</span> <span class="text-purple-400">AS</span> Result;
-<span class="text-purple-400">END</span>`,
-                tech: "MS SQL Server, T-SQL",
-                result: "Sorgu süreleri ortalama 3 saniyeden 0.5 saniyeye düşürüldü."
-            }
-        };
-
-        function switchProject(p) {
-            const code = document.getElementById('code-content');
-            const techEl = document.getElementById('project-tech');
-            const resultEl = document.getElementById('project-result');
-            const outputEl = document.getElementById('code-output');
-
-            if (!code || !projects[p]) return;
-
-            code.innerHTML = `<code>${projects[p].code}</code>`;
-            techEl.innerText = projects[p].tech;
-            resultEl.innerText = projects[p].result;
-
-            // Output'u gizle
-            if (outputEl) outputEl.classList.add('hidden');
-
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            const btn = document.getElementById('btn-' + p);
-            if (btn) btn.classList.add('active');
-        }
-
-        function runProjectCode() {
-            const outputEl = document.getElementById('code-output');
-            if (outputEl) {
-                outputEl.classList.remove('hidden');
-                const container = outputEl.parentElement;
-                setTimeout(() => {
-                    container.scrollTop = container.scrollHeight;
-                }, 50);
+        async function saveLeadToSupabase(leadData) {
+            try {
+                const { error } = await supabaseClient.from('leads').insert([leadData]);
+                if (error) throw error;
+                return true;
+            } catch (err) {
+                console.error(err);
+                return false;
             }
         }
 
-        switchProject('otomasyon');
-
-        // FORM ENDPOINT (Formspree gibi) - burayı doldurursan mesaj direkt gelir
-        // Örnek: const FORM_ENDPOINT = "https://formspree.io/f/xxxxx";
-        const FORM_ENDPOINT = "https://formspree.io/f/xlgzkzor";
-
-        async function sendToEndpointOrMailto({ subjectText, bodyText, fallbackTo }) {
-            console.log("Form gönderiliyor...");
-
-            if (FORM_ENDPOINT && /^https?:\/\//.test(FORM_ENDPOINT)) {
-                try {
-                    const res = await fetch(FORM_ENDPOINT, {
-                        method: "POST",
-                        headers: { "Accept": "application/json", "Content-Type": "application/json" },
-                        body: JSON.stringify({ subject: subjectText, message: bodyText, source: "ozan.dev" })
+        async function renderServicesGrid() {
+            const servicesContainer = document.getElementById('servicesContainer');
+            if (!servicesContainer) return;
+            try {
+                const { data, error } = await supabaseClient
+                    .from('services')
+                    .select('*')
+                    .order('id', { ascending: true });
+                if (error) throw error;
+                if (data && data.length > 0) {
+                    servicesContainer.innerHTML = '';
+                    data.forEach(srv => {
+                        const card = document.createElement('div');
+                        if (srv.popular) {
+                            card.className = "glass p-10 rounded-[3rem] border-purple-500/30 bg-purple-500/[0.02] relative transform md:-translate-y-4 flex flex-col justify-between";
+                            card.innerHTML = `
+                                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-600 px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase italic">EN POPÜLER</div>
+                                <div>
+                                    <i class="${srv.icon} text-4xl mb-6 ${srv.icon_color}"></i>
+                                    <h3 class="text-2xl mb-2 italic uppercase">${srv.title}</h3>
+                                    <p class="text-slate-500 mb-8 font-sans normal-case italic">${srv.description}</p>
+                                    <ul class="space-y-4 mb-10 text-sm font-sans italic font-bold">
+                                        ${srv.features.map(f => `<li><i class="fa-solid fa-check ${srv.icon_color} mr-2"></i> ${f}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div class="text-3xl font-black italic mb-2 ${srv.price_color}">
+                                    ${srv.price}<span class="text-xs text-slate-500 ml-2 uppercase">${srv.price_suffix}</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500 font-sans normal-case italic font-bold mb-6">Teslim: ${srv.delivery} • Kapsam: ${srv.scope} • Net teklif: ${srv.net_offer}</p>
+                                <button onclick="toggleModal('contactModal')" class="w-full py-4 rounded-2xl ${srv.button_class} transition-all uppercase font-black italic">${srv.button_text}</button>
+                            `;
+                        } else {
+                            card.className = "glass p-10 rounded-[3rem] border-white/5 hover:border-cyan-500/30 transition-all group flex flex-col justify-between";
+                            card.innerHTML = `
+                                <div>
+                                    <i class="${srv.icon} text-4xl mb-6 ${srv.icon_color}"></i>
+                                    <h3 class="text-2xl mb-2 italic uppercase">${srv.title}</h3>
+                                    <p class="text-slate-500 mb-8 font-sans normal-case italic">${srv.description}</p>
+                                    <ul class="space-y-4 mb-10 text-sm font-sans italic font-bold">
+                                        ${srv.features.map(f => `<li><i class="fa-solid fa-check ${srv.icon_color} mr-2"></i> ${f}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div class="text-3xl font-black italic mb-2 ${srv.price_color}">
+                                    ${srv.price}<span class="text-xs text-slate-500 ml-2 uppercase">${srv.price_suffix}</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500 font-sans normal-case italic font-bold mb-6">Teslim: ${srv.delivery} • Kapsam: ${srv.scope} • Net teklif: ${srv.net_offer}</p>
+                                <button onclick="toggleModal('contactModal')" class="w-full py-4 rounded-2xl ${srv.button_class} transition-all uppercase font-black italic">${srv.button_text}</button>
+                            `;
+                        }
+                        servicesContainer.appendChild(card);
                     });
-                    if (res.ok) {
-                        alert("Mesajın iletildi. En kısa sürede dönüş yapacağım.");
-                        return true;
+                }
+            } catch (err) {
+                console.error(err);
+                servicesContainer.innerHTML = `<div class="col-span-1 md:col-span-3 text-center py-10 uppercase font-black text-red-500 tracking-widest text-sm">Hata: Hizmetler yüklenemedi.</div>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderServicesGrid();
+
+
+            const compactForm = document.getElementById('compactLeadForm');
+            if (compactForm) {
+                compactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const name = (document.getElementById('compactName')?.value || '').trim();
+                    const mail = (document.getElementById('compactMail')?.value || '').trim();
+                    const msg = (document.getElementById('compactMsg')?.value || '').trim();
+
+                    const success = await saveLeadToSupabase({
+                        name: name,
+                        email: mail,
+                        message: msg,
+                        project_type: "Hızlı İletişim",
+                        budget: "Belirtilmedi"
+                    });
+
+                    if (success) {
+                        alert("Mesajınız başarıyla iletildi!");
+                        compactForm.reset();
+                        toggleModal('compactModal');
+                    } else {
+                        alert("Gönderilemedi, lütfen tekrar deneyin.");
                     }
-                } catch (error) {
-                    console.log("API hatası, mailto kullanılıyor:", error);
+                });
+            }
+
+            const detailedForm = document.getElementById('detailedLeadForm');
+            if (detailedForm) {
+                detailedForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+                    const name = document.getElementById('detName').value.trim();
+                    const mail = document.getElementById('detMail').value.trim();
+                    const type = document.getElementById('detType').value;
+                    const budget = document.getElementById('detBudget').value;
+                    const msg = document.getElementById('detMsg').value.trim();
+
+                    const success = await saveLeadToSupabase({
+                        name: name,
+                        email: mail,
+                        message: msg,
+                        project_type: type,
+                        budget: budget
+                    });
+
+                    if (success) {
+                        alert("Proje talebiniz başarıyla kaydedildi!");
+                        this.reset();
+                        toggleModal('contactModal');
+                    } else {
+                        alert("Gönderilemedi, lütfen tekrar deneyin.");
+                    }
+                });
+            }
+
+            const footerForm = document.getElementById('footerLeadForm');
+            if (footerForm) {
+                const nameInput = document.getElementById('footerLeadName');
+                const emailInput = document.getElementById('footerLeadMail');
+                const msgInput = document.getElementById('footerLeadMsg');
+                const submitBtn = document.getElementById('submitBtn');
+                const formStatus = document.getElementById('formStatus');
+
+                function validateEmail(email) {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
                 }
-            }
 
-            // Mailto fallback
-            console.log("E-posta uygulaması açılıyor...");
-            const subject = encodeURIComponent(subjectText);
-            const body = encodeURIComponent(bodyText);
-            window.location.href = `mailto:${fallbackTo}?subject=${subject}&body=${body}`;
-
-            // Kullanıcıya bilgi ver
-            setTimeout(() => {
-                alert("E-posta uygulamanız açıldı. Mesajı göndermek için 'Gönder' butonuna tıklayın.");
-            }, 500);
-
-            return false;
-        }
-
-        const leadForm = document.getElementById('leadForm');
-        if (leadForm) {
-            leadForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const name = (document.getElementById('leadName')?.value || '').trim();
-                const mail = (document.getElementById('leadMail')?.value || '').trim();
-                const msg = (document.getElementById('leadMsg')?.value || '').trim();
-                const subjectText = `Proje Teklifi | ${name || 'İletişim'}`;
-                const bodyText = `Ad Soyad: ${name}\nE-posta: ${mail}\n\nMesaj:\n${msg}\n\n—\nGönderim: ozan.dev iletişim formu`;
-                sendToEndpointOrMailto({ subjectText, bodyText, fallbackTo: "benozan65@gmail.com" });
-            });
-        }
-
-        const compactForm = document.getElementById('compactLeadForm');
-        if (compactForm) {
-            compactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const name = (document.getElementById('compactName')?.value || '').trim();
-                const mail = (document.getElementById('compactMail')?.value || '').trim();
-                const msg = (document.getElementById('compactMsg')?.value || '').trim();
-                const subjectText = `Hızlı İletişim | ${name || 'Misafir'}`;
-                const bodyText = `Ad Soyad: ${name}\nE-posta: ${mail}\n\nMesaj:\n${msg}\n\n—\nGönderim: ozan.dev hızlı iletişim formu`;
-                sendToEndpointOrMailto({ subjectText, bodyText, fallbackTo: "benozan65@gmail.com" });
-                toggleModal('compactModal');
-            });
-        }
-
-        // Form Validasyon ve Animasyon
-        const footerLeadForm = document.getElementById('footerLeadForm');
-        if (footerLeadForm) {
-            // Real-time validasyon
-            const nameInput = document.getElementById('footerLeadName');
-            const emailInput = document.getElementById('footerLeadMail');
-            const msgInput = document.getElementById('footerLeadMsg');
-            const submitBtn = document.getElementById('submitBtn');
-            const formStatus = document.getElementById('formStatus');
-
-            function validateEmail(email) {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-            }
-
-            function showValidation(input, errorSpan, isValid) {
-                if (isValid) {
-                    input.classList.remove('border-red-500');
-                    input.classList.add('border-white/10');
-                    errorSpan.classList.add('hidden');
-                } else {
-                    input.classList.remove('border-white/10');
-                    input.classList.add('border-red-500');
-                    errorSpan.classList.remove('hidden');
+                function showValidation(input, errorSpan, isValid) {
+                    if (isValid) {
+                        input.classList.remove('border-red-500');
+                        input.classList.add('border-white/10');
+                        errorSpan.classList.add('hidden');
+                    } else {
+                        input.classList.remove('border-white/10');
+                        input.classList.add('border-red-500');
+                        errorSpan.classList.remove('hidden');
+                    }
                 }
-            }
 
-            // Real-time validasyon
-            nameInput?.addEventListener('blur', () => {
-                const isValid = nameInput.value.trim().length > 0;
-                showValidation(nameInput, nameInput.nextElementSibling, isValid);
-            });
-
-            emailInput?.addEventListener('blur', () => {
-                const isValid = validateEmail(emailInput.value.trim());
-                showValidation(emailInput, emailInput.nextElementSibling, isValid);
-            });
-
-            msgInput?.addEventListener('blur', () => {
-                const isValid = msgInput.value.trim().length > 0;
-                showValidation(msgInput, msgInput.nextElementSibling, isValid);
-            });
-
-            // Input focus animasyonları
-            [nameInput, emailInput, msgInput].forEach(input => {
-                input?.addEventListener('focus', () => {
-                    input.parentElement.classList.add('scale-[1.02]');
-                    input.classList.add('shadow-lg', 'shadow-cyan-500/20');
+                nameInput?.addEventListener('blur', () => {
+                    const isValid = nameInput.value.trim().length > 0;
+                    showValidation(nameInput, nameInput.nextElementSibling, isValid);
                 });
 
-                input?.addEventListener('blur', () => {
-                    input.parentElement.classList.remove('scale-[1.02]');
-                    input.classList.remove('shadow-lg', 'shadow-cyan-500/20');
+                emailInput?.addEventListener('blur', () => {
+                    const isValid = validateEmail(emailInput.value.trim());
+                    showValidation(emailInput, emailInput.nextElementSibling, isValid);
                 });
-            });
 
-            footerLeadForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
+                msgInput?.addEventListener('blur', () => {
+                    const isValid = msgInput.value.trim().length > 0;
+                    showValidation(msgInput, msgInput.nextElementSibling, isValid);
+                });
 
-                // Validasyon kontrolü
-                const name = nameInput?.value?.trim() || '';
-                const mail = emailInput?.value?.trim() || '';
-                const msg = msgInput?.value?.trim() || '';
+                [nameInput, emailInput, msgInput].forEach(input => {
+                    input?.addEventListener('focus', () => {
+                        input.parentElement.classList.add('scale-[1.02]');
+                        input.classList.add('shadow-lg', 'shadow-cyan-500/20');
+                    });
 
-                let isValid = true;
+                    input?.addEventListener('blur', () => {
+                        input.parentElement.classList.remove('scale-[1.02]');
+                        input.classList.remove('shadow-lg', 'shadow-cyan-500/20');
+                    });
+                });
 
-                if (name.length <= 0) {
-                    showValidation(nameInput, nameInput.nextElementSibling, false);
-                    isValid = false;
-                }
+                footerForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
 
-                if (!validateEmail(mail)) {
-                    showValidation(emailInput, emailInput.nextElementSibling, false);
-                    isValid = false;
-                }
+                    const name = nameInput?.value?.trim() || '';
+                    const mail = emailInput?.value?.trim() || '';
+                    const msg = msgInput?.value?.trim() || '';
 
-                if (msg.length <= 0) {
-                    showValidation(msgInput, msgInput.nextElementSibling, false);
-                    isValid = false;
-                }
+                    let isValid = true;
 
-                if (!isValid) {
-                    // Status mesajı göster
+                    if (name.length <= 0) {
+                        showValidation(nameInput, nameInput.nextElementSibling, false);
+                        isValid = false;
+                    }
+
+                    if (!validateEmail(mail)) {
+                        showValidation(emailInput, emailInput.nextElementSibling, false);
+                        isValid = false;
+                    }
+
+                    if (msg.length <= 0) {
+                        showValidation(msgInput, msgInput.nextElementSibling, false);
+                        isValid = false;
+                    }
+
+                    if (!isValid) {
+                        formStatus.classList.remove('hidden');
+                        formStatus.textContent = 'Lütfen tüm alanları düzgün doldurun';
+                        formStatus.classList.add('text-red-400');
+                        setTimeout(() => {
+                            formStatus.classList.add('hidden');
+                        }, 3000);
+                        return;
+                    }
+
+                    submitBtn.disabled = true;
+                    submitBtn.querySelector('.submit-text').classList.add('hidden');
+                    submitBtn.querySelector('.submit-loading').classList.remove('hidden');
+                    submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
                     formStatus.classList.remove('hidden');
-                    formStatus.textContent = 'Lütfen tüm alanları düzgün doldurun';
-                    formStatus.classList.add('text-red-400');
-                    setTimeout(() => {
-                        formStatus.classList.add('hidden');
-                    }, 3000);
-                    return;
-                }
+                    formStatus.textContent = 'Gönderiyor...';
+                    formStatus.classList.remove('text-red-400');
+                    formStatus.classList.add('text-cyan-400');
 
-                // Loading state
-                submitBtn.disabled = true;
-                submitBtn.querySelector('.submit-text').classList.add('hidden');
-                submitBtn.querySelector('.submit-loading').classList.remove('hidden');
-                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+                    await new Promise(resolve => setTimeout(resolve, 1500));
 
-                // Status mesajı
-                formStatus.classList.remove('hidden');
-                formStatus.textContent = 'Gönderiliyor...';
-                formStatus.classList.remove('text-red-400');
-                formStatus.classList.add('text-cyan-400');
-
-                const subjectText = `İletişim | ${name}`;
-                const bodyText = `Ad Soyad: ${name}\nE-posta: ${mail}\n\nMesaj:\n${msg}\n\n—\nGönderim: ozan.dev footer mini form`;
-
-                // Simüle edilmiş gönderim (gerçek uygulamada endpoint kullanılır)
-                await new Promise(resolve => setTimeout(resolve, 1500));
-
-                try {
-                    const result = await sendToEndpointOrMailto({ subjectText, bodyText, fallbackTo: "benozan65@gmail.com" });
-
-                    // Success state
-                    submitBtn.querySelector('.submit-loading').classList.add('hidden');
-                    submitBtn.querySelector('.submit-success').classList.remove('hidden');
-                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
-                    submitBtn.classList.add('bg-green-600', 'hover:bg-green-500');
-
-                    formStatus.textContent = 'Mesajınız başarıyla gönderildi!';
-                    formStatus.classList.remove('text-cyan-400');
-                    formStatus.classList.add('text-green-400');
-
-                    // Formu temizle
-                    setTimeout(() => {
-                        footerLeadForm.reset();
-                        submitBtn.disabled = false;
-                        submitBtn.querySelector('.submit-success').classList.add('hidden');
-                        submitBtn.querySelector('.submit-text').classList.remove('hidden');
-                        submitBtn.classList.remove('bg-green-600', 'hover:bg-green-500');
-                        formStatus.classList.add('hidden');
-
-                        // Validasyon mesajlarını gizle
-                        document.querySelectorAll('.validation-error').forEach(err => err.classList.add('hidden'));
-                        document.querySelectorAll('input').forEach(input => {
-                            input.classList.remove('border-red-500');
-                            input.classList.add('border-white/10');
+                    try {
+                        const result = await saveLeadToSupabase({
+                            name: name,
+                            email: mail,
+                            message: msg,
+                            project_type: "Footer İletişim",
+                            budget: "Belirtilmedi"
                         });
-                    }, 3000);
 
-                } catch (error) {
-                    // Error state
-                    submitBtn.disabled = false;
-                    submitBtn.querySelector('.submit-loading').classList.add('hidden');
-                    submitBtn.querySelector('.submit-text').classList.remove('hidden');
-                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                        if (!result) throw new Error("Insert failed");
 
-                    formStatus.textContent = 'Gönderilemedi, lütfen tekrar deneyin';
-                    formStatus.classList.remove('text-cyan-400');
-                    formStatus.classList.add('text-red-400');
+                        submitBtn.querySelector('.submit-loading').classList.add('hidden');
+                        submitBtn.querySelector('.submit-success').classList.remove('hidden');
+                        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                        submitBtn.classList.add('bg-green-600', 'hover:bg-green-500');
 
-                    setTimeout(() => {
-                        formStatus.classList.add('hidden');
-                    }, 5000);
-                }
-            });
-        }
+                        formStatus.textContent = 'Mesajınız başarıyla gönderildi!';
+                        formStatus.classList.remove('text-cyan-400');
+                        formStatus.classList.add('text-green-400');
+
+                        setTimeout(() => {
+                            footerForm.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.querySelector('.submit-success').classList.add('hidden');
+                            submitBtn.querySelector('.submit-text').classList.remove('hidden');
+                            submitBtn.classList.remove('bg-green-600', 'hover:bg-green-500');
+                            formStatus.classList.add('hidden');
+
+                            document.querySelectorAll('.validation-error').forEach(err => err.classList.add('hidden'));
+                            document.querySelectorAll('input').forEach(input => {
+                                input.classList.remove('border-red-500');
+                                input.classList.add('border-white/10');
+                            });
+                        }, 3000);
+
+                    } catch (error) {
+                        submitBtn.disabled = false;
+                        submitBtn.querySelector('.submit-loading').classList.add('hidden');
+                        submitBtn.querySelector('.submit-text').classList.remove('hidden');
+                        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+
+                        formStatus.textContent = 'Gönderilemedi, lütfen tekrar deneyin';
+                        formStatus.classList.remove('text-cyan-400');
+                        formStatus.classList.add('text-red-400');
+
+                        setTimeout(() => {
+                            formStatus.classList.add('hidden');
+                        }, 5000);
+                    }
+                });
+            }
+        });
 
 
-        // Referans Slider
         (function initTestimonialSlider() {
             const testimonials = [
                 { text: "“İletişim netti, teslimat hızlıydı. Sayfa hızı ciddi şekilde toparlandı.”", name: "Ahmet Yılmaz", role: "Kurumsal Web" },
@@ -2342,7 +2211,6 @@
             updateTestimonial();
         })();
 
-        // Sayı Sayan Animasyon (Counter Up)
         (function initCounter() {
             const startCount = (el) => {
                 const target = +el.getAttribute('data-target');
@@ -2376,7 +2244,6 @@
             document.querySelectorAll('.counter').forEach(c => obs.observe(c));
         })();
 
-        // Preloader Kapatma ve Yüzde Simülasyonu
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             const percentEl = document.getElementById('preload-percent');
@@ -2406,7 +2273,6 @@
             }
         });
 
-        // Magnetic Buttons
         document.querySelectorAll('.magnetic-btn').forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
                 const rect = btn.getBoundingClientRect();
@@ -2419,7 +2285,6 @@
             });
         });
 
-        // 3D Tilt Effect
         document.querySelectorAll('.tilt-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
@@ -2515,8 +2380,6 @@
     </div>
 
     <script>
-        // ── OZAN.AI — Fixed Questions Bot ──────────────────
-
         const botData = [
             { q: "Hizmetlerin neler?", a: "Sunduğum temel hizmetler şunlardır:\n\n• Python Sistemleri: Veri analizi, Selenium otomasyon botları ve API entegrasyonları.\n• Kurumsal Web: Tailwind CSS tasarım, %100 SEO skoru ve Admin Paneli.\n• Özel Yazılım: C# / .NET, SQL Server ve SOLID mimari odaklı çözümler." },
             { q: "Fiyatlar ne kadar?", a: "Fiyatlarımız projenin kapsamına göre değişmekle birlikte başlangıç seviyeleri şöyledir:\n\n• Python Sistemleri: ₺30.000'den başlayan\n• Kurumsal Web: ₺50.000'den başlayan\n• Özel Yazılım: ₺100.000'den başlayan" },
@@ -2547,9 +2410,8 @@
 
         function initBot() {
             const msgs = document.getElementById('aiMessages');
-            msgs.innerHTML = ''; // Temizle
+            msgs.innerHTML = '';
 
-            // Karşılama mesajı
             addAIMsg('Merhaba! 👋 Ben OZAN.AI. Ozan\'ın hizmetleri hakkında merak ettiğin her şeyi sorabilirsin.', 'bot');
 
             setTimeout(() => {
@@ -2579,7 +2441,6 @@
             const item = botData[index];
             const msgs = document.getElementById('aiMessages');
 
-            // Tıklanan soruyu ekle
             addAIMsg(item.q, 'user');
 
             const tid = showTyping();
@@ -2587,13 +2448,10 @@
             setTimeout(() => {
                 removeTyping(tid);
 
-                // Cevabı ekle ama otomatik aşağı kaydırma
                 const answerElement = addAIMsg(item.a, 'bot', false);
 
-                // Cevabın başına odaklan (kaydır)
                 answerElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-                // Tekrar soruları göster ama otomatik aşağı kaydırma
                 setTimeout(() => {
                     addAIMsg('Başka ne öğrenmek istersiniz?', 'bot', false);
                     showQuestions(false);
@@ -2670,8 +2528,10 @@
     </style>
 
     <div id="compactModal" class="modal px-6 italic-black text-white">
-        <div id="compactModalInner" class="max-w-sm w-full glass rounded-[2rem] p-6 relative transform transition-all duration-300">
-            <button onclick="toggleModal('compactModal')" class="absolute top-5 right-5 text-lg text-slate-400 hover:text-white transition-colors z-20">
+        <div id="compactModalInner"
+            class="max-w-sm w-full glass rounded-[2rem] p-6 relative transform transition-all duration-300">
+            <button onclick="toggleModal('compactModal')"
+                class="absolute top-5 right-5 text-lg text-slate-400 hover:text-white transition-colors z-20">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="mb-5 text-center">
@@ -2679,26 +2539,38 @@
             </div>
             <form id="compactLeadForm" class="space-y-3">
                 <div class="relative group">
-                    <i class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm group-focus-within:text-blue-400 transition-colors z-10"></i>
-                    <input id="compactName" class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-3 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:bg-white/10 transition-all duration-300 not-italic" placeholder="Ad Soyad (Opsiyonel)">
+                    <i
+                        class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm group-focus-within:text-blue-400 transition-colors z-10"></i>
+                    <input id="compactName"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-3 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:bg-white/10 transition-all duration-300 not-italic"
+                        placeholder="Ad Soyad (Opsiyonel)">
                 </div>
                 <div class="relative group">
-                    <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm group-focus-within:text-blue-400 transition-colors z-10"></i>
-                    <input id="compactMail" type="email" class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-3 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:bg-white/10 transition-all duration-300 not-italic" placeholder="E-posta (Zorunlu)" required>
+                    <i
+                        class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm group-focus-within:text-blue-400 transition-colors z-10"></i>
+                    <input id="compactMail" type="email"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-3 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:bg-white/10 transition-all duration-300 not-italic"
+                        placeholder="E-posta (Zorunlu)" required>
                 </div>
                 <div class="relative group">
-                    <i class="fa-solid fa-comment-dots absolute left-4 top-3.5 text-slate-500 text-sm group-focus-within:text-blue-400 transition-colors z-10"></i>
-                    <textarea id="compactMsg" rows="2" class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-3 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:bg-white/10 transition-all duration-300 resize-none not-italic" placeholder="Kısa Mesajınız..." required></textarea>
+                    <i
+                        class="fa-solid fa-comment-dots absolute left-4 top-3.5 text-slate-500 text-sm group-focus-within:text-blue-400 transition-colors z-10"></i>
+                    <textarea id="compactMsg" rows="2"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-3 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:bg-white/10 transition-all duration-300 resize-none not-italic"
+                        placeholder="Kısa Mesajınız..." required></textarea>
                 </div>
-                <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.3)] uppercase font-black text-xs tracking-wider transform hover:-translate-y-0.5 hover:scale-[1.02] flex items-center justify-center gap-2 not-italic group">
-                    GÖNDER <i class="fa-solid fa-paper-plane text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                <button type="submit"
+                    class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.3)] uppercase font-black text-xs tracking-wider transform hover:-translate-y-0.5 hover:scale-[1.02] flex items-center justify-center gap-2 not-italic group">
+                    GÖNDER <i
+                        class="fa-solid fa-paper-plane text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                 </button>
             </form>
             <div class="mt-4 text-center">
-                <span class="text-[0.75rem] text-slate-400 font-sans normal-case tracking-normal">⏳ Tahmini dönüş süresi: 2-14 saat</span>
+                <span class="text-[0.75rem] text-slate-400 font-sans normal-case tracking-normal">⏳ Tahmini dönüş
+                    süresi: 2-14 saat</span>
             </div>
         </div>
-    </div>
+
 
 </body>
 
