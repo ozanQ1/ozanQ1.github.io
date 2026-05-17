@@ -1349,8 +1349,17 @@
                     <i class="fa-solid fa-rocket text-purple-400 text-sm"></i>
                     <span class="text-xs font-black uppercase tracking-wider text-purple-300">PROJE BAŞLAT</span>
                 </div>
-                <h3 class="text-sm md:text-base text-slate-300 normal-case font-sans italic font-bold max-w-sm mx-auto">
+                <h3
+                    class="text-sm md:text-base text-slate-300 normal-case font-sans italic font-bold max-w-sm mx-auto mb-4">
                     Hayalinizdeki projeyi detaylandırın, hemen planlamaya başlayalım.</h3>
+                <div
+                    class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-4 text-[10px] sm:text-xs font-black uppercase tracking-wider text-purple-400/80">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-purple-400"></i> TAHMİNİ
+                        DÖNÜŞ SÜRESİ: 4-8 SAAT</span>
+                    <span class="hidden sm:inline text-white/20">|</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-heart text-purple-400"></i> TEKLİF
+                        VERMEKTEN KORKMAYINIZ</span>
+                </div>
             </div>
 
             <form id="detailedLeadForm" class="space-y-5 relative z-10">
@@ -1382,6 +1391,8 @@
                         <option value="Web Sitesi / Portfolyo" class="bg-gray-900 text-white">Web Sitesi / Portfolyo
                         </option>
                         <option value="E-Ticaret" class="bg-gray-900 text-white">E-Ticaret</option>
+                        <option value="Python Otomasyon / Bot" class="bg-gray-900 text-white">Python Otomasyon / Bot
+                        </option>
                         <option value="Özel Yazılım Geliştirme" class="bg-gray-900 text-white">Özel Yazılım Geliştirme
                         </option>
                         <option value="Diğer" class="bg-gray-900 text-white">Diğer</option>
@@ -1738,6 +1749,26 @@
             el.classList.toggle('active');
         }
 
+        function openContactForService(title) {
+            toggleModal('contactModal');
+            const selectType = document.getElementById('detType');
+            const selectBudget = document.getElementById('detBudget');
+            if (!selectType || !selectBudget) return;
+            selectType.value = "";
+            selectBudget.value = "";
+            const lowerTitle = title.toLowerCase();
+            if (lowerTitle.includes('python')) {
+                selectType.value = "Python Otomasyon / Bot";
+                selectBudget.value = "Başlangıç Düzeyi";
+            } else if (lowerTitle.includes('web') || lowerTitle.includes('kurumsal')) {
+                selectType.value = "Web Sitesi / Portfolyo";
+                selectBudget.value = "Orta Ölçekli Proje";
+            } else if (lowerTitle.includes('özel') || lowerTitle.includes('yazılım') || lowerTitle.includes('yazilim')) {
+                selectType.value = "Özel Yazılım Geliştirme";
+                selectBudget.value = "Kapsamlı / Kurumsal Proje";
+            }
+        }
+
         const techCopy = {
             python: {
                 title: "PYTHON",
@@ -1925,7 +1956,7 @@
                                     ${srv.price}<span class="text-xs text-slate-500 ml-2 uppercase">${srv.price_suffix}</span>
                                 </div>
                                 <p class="text-[11px] text-slate-500 font-sans normal-case italic font-bold mb-6">Teslim: ${srv.delivery} • Kapsam: ${srv.scope} • Net teklif: ${srv.net_offer}</p>
-                                <button onclick="toggleModal('contactModal')" class="w-full py-4 rounded-2xl ${srv.button_class} transition-all uppercase font-black italic">${srv.button_text}</button>
+                                <button onclick="openContactForService('${srv.title}')" class="w-full py-4 rounded-2xl ${srv.button_class} transition-all uppercase font-black italic">TEKLİF AL</button>
                             `;
                         } else {
                             card.className = "glass p-10 rounded-[3rem] border-white/5 hover:border-cyan-500/30 transition-all group flex flex-col justify-between";
@@ -1942,7 +1973,7 @@
                                     ${srv.price}<span class="text-xs text-slate-500 ml-2 uppercase">${srv.price_suffix}</span>
                                 </div>
                                 <p class="text-[11px] text-slate-500 font-sans normal-case italic font-bold mb-6">Teslim: ${srv.delivery} • Kapsam: ${srv.scope} • Net teklif: ${srv.net_offer}</p>
-                                <button onclick="toggleModal('contactModal')" class="w-full py-4 rounded-2xl ${srv.button_class} transition-all uppercase font-black italic">${srv.button_text}</button>
+                                <button onclick="openContactForService('${srv.title}')" class="w-full py-4 rounded-2xl ${srv.button_class} transition-all uppercase font-black italic">TEKLİF AL</button>
                             `;
                         }
                         servicesContainer.appendChild(card);
@@ -2011,6 +2042,7 @@
                     }
                 });
             }
+
 
             const footerForm = document.getElementById('footerLeadForm');
             if (footerForm) {
@@ -2119,7 +2151,6 @@
                         });
 
                         if (!result) throw new Error("Insert failed");
-
                         submitBtn.querySelector('.submit-loading').classList.add('hidden');
                         submitBtn.querySelector('.submit-success').classList.remove('hidden');
                         submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
@@ -2363,7 +2394,7 @@
                 </div>
             </div>
             <button onclick="toggleAIChat()"
-                class="text-slate-400 hover:text-white transition text-xl leading-none">&times;</button>
+                class="text-slate-400 hover:text-white transition text-2xl leading-none p-2 cursor-pointer z-10">&times;</button>
         </div>
 
         <!-- Messages Area (Scrollable) -->
@@ -2570,6 +2601,7 @@
                     süresi: 2-14 saat</span>
             </div>
         </div>
+    </div>
 
 
 </body>
